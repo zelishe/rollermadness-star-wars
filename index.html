@@ -126,11 +126,11 @@
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-	fjs.parentNode.insertBefore(js, fjs);
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
@@ -160,9 +160,12 @@
     <br />
     <br />
     <br />
-    <div class="fb-share-button"
+    <!-- Your like button code -->
+    <div class="fb-like"
          data-href="http://zelishe.github.io/rollermadness-star-wars/"
-         data-layout="button_count">
+         data-layout="standard"
+         data-action="like"
+         data-show-faces="true">
     </div>
 </div>
 
