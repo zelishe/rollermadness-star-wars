@@ -1,66 +1,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Rollermadness: Star Wars by Sergii Zelentsov</title>
-		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
-		<script type="text/javascript">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Rollermadness: Star Wars by Sergii Zelentsov</title>
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+
+	<meta property="og:url"           content="http://zelishe.github.io/rollermadness-star-wars" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Rollermadness Star Wars" />
+	<meta property="og:description"   content="Play fun game about BB-8 droid trying to steal Empire Plans from evil Stormtroopers" />
+	<meta property="og:image"         content="http://zelishe.github.io/rollermadness-star-wars/share.jpg" />
+
+	<script type="text/javascript">
 		<!--
 		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
 		if (document.location.protocol == 'https:')
 			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
 		-->
-		</script>
-		<script type="text/javascript">
+	</script>
+	<script type="text/javascript">
 		<!--
-			var config = {
-				width: 960, 
-				height: 600,
-				params: { enableDebugging:"0" }
-				
-			};
-			var u = new UnityObject2(config);
+		var config = {
+			width: 960,
+			height: 600,
+			params: { enableDebugging:"0" }
 
-			jQuery(function() {
+		};
+		var u = new UnityObject2(config);
 
-				var $missingScreen = jQuery("#unityPlayer").find(".missing");
-				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
-				$missingScreen.hide();
-				$brokenScreen.hide();
-				
-				u.observeProgress(function (progress) {
-					switch(progress.pluginStatus) {
-						case "broken":
-							$brokenScreen.find("a").click(function (e) {
-								e.stopPropagation();
-								e.preventDefault();
-								u.installPlugin();
-								return false;
-							});
-							$brokenScreen.show();
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
 						break;
-						case "missing":
-							$missingScreen.find("a").click(function (e) {
-								e.stopPropagation();
-								e.preventDefault();
-								u.installPlugin();
-								return false;
-							});
-							$missingScreen.show();
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
 						break;
-						case "installed":
-							$missingScreen.remove();
+					case "installed":
+						$missingScreen.remove();
 						break;
-						case "first":
+					case "first":
 						break;
-					}
-				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "rollermadness-star-wars.unity3d");
+				}
 			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "rollermadness-star-wars.unity3d");
+		});
 		-->
-		</script>
-		<style type="text/css">
+	</script>
+	<style type="text/css">
 		<!--
 		body {
 			font-family: Helvetica, Verdana, Arial, sans-serif;
@@ -113,59 +120,80 @@
 			width: 960px;
 		}
 		-->
-		</style>
-	</head>
+	</style>
+</head>
+<body>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-		<h1>"Rollermadness: Star Wars" <b>by</b> Sergii Zelentsov</h1>
-		<div class="content">
 
-			<ul style="text-align:left;font-weight:normal">
-				<li>You are playing as BB-8, upcoming "Force Awakens" droid, who needs to steal Secret Empire Plans</li>
-                <li>You need to score 5 points at level 1</li>
-                <li>Level 2 is survival! Earn as much points, as you can</li>
-				<li>All the appropriate textures, sounds, music and fictional characters belong to LucasArts and (sigh) Disney Corporation. All of it was used "just for fun" in a profitless manner</li>
-                <li><a href="http://www.cubeecraft.com/cubee/stormtrooper" target="_blank">Stormtrooper</a> and <b>(spoiler alert! :)</b> <a href="http://www.cubeecraft.com/cubee/darth-vader" target="_blank">level 2 boss</a> textures were taken from <a href="http://cubeecraft.com" target="_blank">cubeecraft.com</a>. Thank you guys for your great site!</li>
-			</ul>
+<h1>"Rollermadness: Star Wars" <b>by</b> Sergii Zelentsov</h1>
+<div class="content">
 
-			<div id="unityPlayer">
-				<div class="missing">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
-						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-					</a>
-				</div>
-				<div class="broken">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
-						<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
-					</a>
-				</div>
-			</div>
+	<ul style="text-align:left;font-weight:normal">
+		<li>You are playing as BB-8, upcoming "Force Awakens" droid, who needs to steal Secret Empire Plans</li>
+		<li>You need to score 5 points at level 1</li>
+		<li>Level 2 is survival! Earn as much points, as you can</li>
+		<li>All the appropriate textures, sounds, music and fictional characters belong to LucasArts and (sigh) Disney Corporation. All of it was used "just for fun" in a profitless manner</li>
+		<li><a href="http://www.cubeecraft.com/cubee/stormtrooper" target="_blank">Stormtrooper</a> and <b>(spoiler alert! :)</b> <a href="http://www.cubeecraft.com/cubee/darth-vader" target="_blank">level 2 boss</a> textures were taken from <a href="http://cubeecraft.com" target="_blank">cubeecraft.com</a>. Thank you guys for your great site!</li>
+	</ul>
+
+	<div id="unityPlayer">
+		<div class="missing">
+			<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+				<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+			</a>
 		</div>
-		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+		<div class="broken">
+			<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+				<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+			</a>
+		</div>
+	</div>
+</div>
 
-        <div class="content">
-            <h3>Known bugs</h3>
 
-            <ul style="text-align:left;font-weight:normal">
-                <li>BB-8 sounds like R2D2 :)</li>
-                <li>Stormtroopers don't have blasters. Because you know how they shoot, aren't you?</li>
-                <li>Lava field has grey mesh/texture-tiling lines on it</li>
-                <li>Droid "head" stays on the scene, when you loose or win the level</li>
-                <li>High bumper at Level 2 has bad stretched texture</li>
-            </ul>
+<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;
+    <br />
+    <br />
+    <br />
+    <div class="fb-share-button"
+         data-href="http://zelishe.github.io/rollermadness-star-wars/"
+         data-layout="button_count">
+    </div>
+</p>
 
-            <h1>Thank you for your peer review! :)</h1>
-        </div>
+<div class="content">
+	<h3>Known bugs</h3>
+
+	<ul style="text-align:left;font-weight:normal">
+		<li>BB-8 sounds like R2D2 :)</li>
+		<li>Stormtroopers don't have blasters. Because you know how they shoot, aren't you?</li>
+		<li>Lava field has grey mesh/texture-tiling lines on it</li>
+		<li>Droid "head" stays on the scene, when you loose or win the level</li>
+		<li>High bumper at Level 2 has bad stretched texture</li>
+	</ul>
+
+	<h1>Thank you for your peer review! :)</h1>
+</div>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-68992657-1', 'auto');
-  ga('send', 'pageview');
+	ga('create', 'UA-68992657-1', 'auto');
+	ga('send', 'pageview');
 
 </script>
 
-	</body>
+</body>
 </html>
