@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <script src="TemplateData/UnityProgress.js"></script>
+    <script>
+        window.addEventListener("keydown", function(e) {
+            // space and arrow keys
+            if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+                e.preventDefault();
+            }
+        }, false);
+    </script>
 </head>
 <body class="template">
 
@@ -45,15 +53,6 @@
     </div>
 
     <div class="template-wrap clear" style="margin-top: 700px">
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1468607373431744";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
         <h1 style="text-align: center"><a href="http://zelishe.github.io/rollermadness-star-wars" target="_blank">Click here to play Star Wars: Poe Dameron Game</a></h1>
         This project was done by Sergii Zelentsov as a part of <a href="https://www.coursera.org/learn/game-development/home/welcome" target="_blank">Introduction to Game Development</a> course by Michigan State University and Coursera.
     </div>
